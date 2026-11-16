@@ -1,0 +1,79 @@
+{
+  "schema": 1,
+  "sourceRepository": "https://github.com/microsoft/amplifier-unified",
+  "sourceRevision": "559d388ae4cefbedc048b8af54c72b94216b4e18",
+  "sourceSubdirectory": "components/operations",
+  "importHead": "80b6fe335ae62d8b2e75006af4248f8431270c13",
+  "importTree": "ad5af39e031c8658e947cb1bf2c7299a0f345afd",
+  "commitMap": [
+    {
+      "original": "0e5b6bfd4cfd2f1fc089f284b9e064fbe4f27024",
+      "imported": "0549c078f9e87fc4055adac8be3772ca43718373"
+    },
+    {
+      "original": "7f4ec99f01f52c1a5514ee3083bd5e65481b73ff",
+      "imported": "f3808ee24df101b5f96c9487641d4b1581ae8a0c"
+    },
+    {
+      "original": "7e9435dd8df41e8dc1f0f4ee8f4ed0437788c745",
+      "imported": "2feed6446f6b89cc488207f08f2b0b855a306f20"
+    },
+    {
+      "original": "57ce47b302ba776fe442c9c9a25ae9d737be7093",
+      "imported": "3d4c4279e1e7bbea1201a82f2a97cdde40dba61e"
+    },
+    {
+      "original": "5ba3c4d09e2ae7fbe05ac6f940d4a80ecda3e705",
+      "imported": "35cd0b9584f6040052ef146ab94b05c763c58da0"
+    },
+    {
+      "original": "95e5838b6ef5db38ec9194adeb9c6049fad9740b",
+      "imported": "92d9f9ea72d10833cc8a16a829b32988e86dc0b8"
+    },
+    {
+      "original": "29c6d27febfd9ff8a4ffe2b70ae9e429c3612e87",
+      "imported": "70368aed3d127637ebdd5b35afc5cf4ed436a1f3"
+    },
+    {
+      "original": "cb97841bce1886535e8265fda2e06557c9723409",
+      "imported": "8b8e335d7a28e56a8e48a4fd4ed3948849524dc2"
+    },
+    {
+      "original": "f8720aa82ac326e2526b80128e5c13114ea94c8e",
+      "imported": "807db8ce0d0a0e2b660b7fe4faa1b2ea4af2f9c1"
+    },
+    {
+      "original": "e2dd0af6833302a0439c1e9f54ab368d5771ea3d",
+      "imported": "daa637d283081c9f42f34b38aa468504f57581cc"
+    },
+    {
+      "original": "8858efacd49a03a6529d37ca0c1995905a56d4f7",
+      "imported": "c85e807a4e893eda03ee18c543dc10a01cfb11fe"
+    },
+    {
+      "original": "b6c58bb24cb92c495ded1c42683dc8496c92a6ea",
+      "imported": "8c9e5f6ff356d7f291e114f4da6e788e40eb6439"
+    },
+    {
+      "original": "69220ad6aac6b98fe133583ea68d06932dc22ab6",
+      "imported": "80b6fe335ae62d8b2e75006af4248f8431270c13"
+    }
+  ],
+  "files": {
+    ".gitignore": "4a0c796331e18ff216fbcf3e2d1c02f58c08e4a7dce2ab41d36c65509ef92989",
+    "LICENSE": "c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383",
+    "MANIFEST.in": "ca4d086a2960c7e0254208f08bf99f5db67adb33599085574b1155e859c7fb0a",
+    "README.md": "6cfc7545a8563b85ae859e87cd0cf7773b9af2dc852a575aa493d50c0d6676e3",
+    "__init__.py": "e88653a95152ffb42aec84c73b92966035c224a186c1e499342cddd4f29f5757",
+    "coordination.py": "06a33dfe3e12abda9b2f3a417077af38ec7d860eb19d350bb1fe4853174551f3",
+    "journal.py": "8e6fa1b1b2945c4ce5ab3b77ffe3ec5d8fe740e5ad0ab6a5fe8d98e3097d70ce",
+    "pyproject.toml": "ec7dcaa6cdefa1032dc48b0693ed45ceb72a7af5122c3e83eb213774f90f698a",
+    "tests/operation_observations.py": "d54ba9f511561aed6be283b7a69ad58b1f76b6e40410bc7e7a63397462749479",
+    "tests/test_operations_coordination.py": "e981e08bcadb34380dd3fb308764b03a12c06ea07139ceccca829a839edd8c8c",
+    "tests/test_operations_journal.py": "0557fbc58d4d1f0f9a510c6952f63b79b6cc9be8522f0c9b2ad06416e402a850",
+    "tests/test_operations_retention.py": "bbd8fd4e10d0d3714b8cabfddc96cfd2501f78b619c5380fe7bb36981115d630"
+  },
+  "history": "Original author, committer, timestamps and message bytes preserved; projected trees/parents produce new commit hashes. Original full commits and signatures remain authoritative in Unified. Earlier historical tests retain their original application context; current standalone tests define this package qualification.",
+  "delivery": "Prepared public author home bkrabach/amplifier-platform-operations with later transfer planned. Original published operations-v0.1.0 artifacts/receipts and Unified selection unchanged. No new release or runtime behavior.",
+  "existingFoundationLibrary": "Foundation libraries/operations is a separate divergent implementation and API/consumer boundary. This unchanged Unified source handoff does not overwrite, reconcile or replace it."
+}

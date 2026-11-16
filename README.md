@@ -38,57 +38,66 @@ The test configuration enables the existing asynchronous notifier check.
 
 ## Ownership and delivery
 
-These Python files remain the sole implementation. The pure package tests live
-here; Unified retains host integration, permissions, Stop and real-process tests.
-Unified selects a published artifact into the generated top-level
-`amplifier_operations/` directory. That location preserves ordinary editable and
-isolated-worker imports; this nested project remains the sole authoring owner.
-`components/operations.source.json` binds the exact original receipt and wheel.
-Author edits and component publication do not change the app default.
+This history-preserving project is prepared as the public standalone author home
+at `bkrabach/amplifier-platform-operations`, with a later transfer to Microsoft
+planned. [PROVENANCE.json](PROVENANCE.json) maps the original Unified commits,
+including the source and tests before their component move. The MIT attribution,
+`amplifier-operations` distribution, `amplifier_operations` import, runtime bytes,
+and standalone test behavior are unchanged by this handoff.
 
-The package version alone does not identify published or qualified bytes; use the
-actual release source receipt and artifact hashes.
-Use a separate environment for the standalone distribution: do not coinstall it
-with `amplifier-unified` while both distributions own the same package files.
-Never edit the generated runtime snapshot by hand. Normal app wheel, source
-archive and editable builds verify the committed selection offline, without
-requiring the author tree to match. Return to a prior selection through ordinary
-app rollback, preserving newer operation receipts and delivery cursors. This is
-independent release consumption, not standalone pip replacement.
+Unified retains execution, authorization, Stop, cancellation, process ownership
+and host integration. Foundation's optional `libraries/operations` has separate
+existing API and consumer contracts; this handoff does not replace or reconcile
+that implementation.
 
-To select verified original release assets from the Unified root:
+Use a separate environment for this standalone distribution. Do not coinstall it
+with `amplifier-unified`: Unified currently owns its selected installed package
+files. Source hosting and author changes do not alter that selection. After the
+reviewed authoring handoff, do not maintain competing authored copies.
 
-```sh
-python scripts/scheduling_delivery.py select --component operations \
-  --dist /path/to/downloaded-assets --revision FULL_SOURCE_SHA \
-  --receipt-sha256 EXACT_OPERATIONS_SOURCE_SHA256
-python scripts/scheduling_delivery.py verify --component operations
-```
+## Existing artifacts and qualification
 
-The original 0.1.0 receipt retains its historical `amplifier_operations` author
-path. The producer also recognizes the current `components/operations` path at
-newer revisions; moving the author project never rewrites old release identity.
-The intended repository name is `amplifier-platform-operations`; repository naming
-does not rename the existing Python import or its data contracts.
+Unified selects the original published 0.1.0 artifact from
+[its immutable operations-v0.1.0 release](https://github.com/microsoft/amplifier-unified/releases/tag/operations-v0.1.0).
+Its source receipt retains the original producer identity. This repository does
+not republish or overwrite those bytes. Unified continues to verify its generated
+selection offline for wheel, source-archive and editable builds; no sibling
+checkout or this repository is required by that packaged selection.
 
+The **Operations package** workflow builds one wheel and source archive,
+then runs the existing tests against that installed wheel outside this checkout
+on Linux/Python 3.13. It uploads qualification artifacts only. Native Windows,
+macOS and host integration acceptance remain separate; source publication is not
+proof of installed substitution or a live deployment.
 
-## Component artifact delivery
+The imported version remains 0.1.0. Before a new publication, coordinate
+its version and exact source/artifact receipt with consumers. Unified's later
+selection is an explicit reviewed change with a sole installed owner and ordinary
+rollback. Newer records, uncertain effects and caller-owned state retain their
+authority; neither source handoff nor rollback permits replay. A later repository
+transfer should preserve history and releases.
 
-The `Operations package` workflow qualifies pull requests on Linux/Python 3.13.
-The release owner can dispatch it from `main` with an exact merged source commit.
-It builds the wheel and source archive once, then installs that same wheel into a
-separate environment and runs the existing package tests outside the checkout.
-The copied pytest configuration keeps the asynchronous notifier case enabled.
-This qualification does not establish Windows or macOS acceptance.
+## Contributing
 
-Publication produces four assets under `operations-vX.Y.Z`: the wheel, source
-archive, `operations-source.json`, and `SHA256SUMS`. The receipt binds the exact
-source revision, project files and artifact hashes. Verify the checksums before
-installing the wheel into a separate standalone environment. No app, native
-runtime, sibling source checkout or runtime dependency is required. A PR never
-publishes; the component release never replaces the application latest release.
+> [!NOTE]
+> This project is not currently accepting external contributions, but we're actively working toward opening this up. We value community input and look forward to collaborating in the future. For now, feel free to fork and experiment!
 
-For interrupted publication, retain the original build artifact and rerun only
-failed jobs. Rebuilding is not a byte-reproducibility promise. Existing tags and
-assets must match exactly; mismatches remain available for review rather than
-being overwritten. A completed release retry only verifies the existing bytes.
+Most contributions require you to agree to a
+Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
+the rights to use your contribution. For details, visit [Contributor License Agreements](https://cla.opensource.microsoft.com).
+
+The Microsoft source contribution requirements remain applicable to changes
+intended for transfer upstream. The temporary personal repository does not claim
+that a Microsoft CLA bot or other organization automation is already configured.
+
+This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
+For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
+contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
+
+## Trademarks
+
+This project may contain trademarks or logos for projects, products, or services. Authorized use of Microsoft
+trademarks or logos is subject to and must follow
+[Microsoft's Trademark & Brand Guidelines](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general).
+Use of Microsoft trademarks or logos in modified versions of this project must not cause confusion or imply Microsoft sponsorship.
+Any use of third-party trademarks or logos are subject to those third-party's policies.
