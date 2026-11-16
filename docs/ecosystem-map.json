@@ -1,0 +1,81 @@
+{
+  "audience": "Developers embedding the documented Python library",
+  "citations": [
+    {
+      "path": "README.md",
+      "ref": "03d792673952500e5d24537a4cad374b9f684495",
+      "sha256": "beb1b7c12eac024bb74685b70e7891a8cab1e478ba10bc351774819ae7cc58f6",
+      "url": "https://github.com/bkrabach/amplifier-platform-operations/blob/03d792673952500e5d24537a4cad374b9f684495/README.md"
+    },
+    {
+      "path": "PROVENANCE.json",
+      "ref": "03d792673952500e5d24537a4cad374b9f684495",
+      "sha256": "c6f67f14bf64260c00848a9c764a754899225924a0ce4c5c257d2626e1cd82d0",
+      "url": "https://github.com/bkrabach/amplifier-platform-operations/blob/03d792673952500e5d24537a4cad374b9f684495/PROVENANCE.json"
+    },
+    {
+      "path": "pyproject.toml",
+      "ref": "03d792673952500e5d24537a4cad374b9f684495",
+      "sha256": "ec7dcaa6cdefa1032dc48b0693ed45ceb72a7af5122c3e83eb213774f90f698a",
+      "url": "https://github.com/bkrabach/amplifier-platform-operations/blob/03d792673952500e5d24537a4cad374b9f684495/pyproject.toml"
+    }
+  ],
+  "display_name": "Amplifier Platform Operations",
+  "edges": [
+    {
+      "from": "caller",
+      "relation": "uses",
+      "to": "self"
+    },
+    {
+      "from": "self",
+      "relation": "contains",
+      "to": "part-0"
+    },
+    {
+      "from": "self",
+      "relation": "contains",
+      "to": "part-1"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "self",
+      "kind": "self",
+      "label": "Amplifier Platform Operations",
+      "repository": "bkrabach/amplifier-platform-operations"
+    },
+    {
+      "id": "caller",
+      "kind": "external",
+      "label": "Calling application (Python API)"
+    },
+    {
+      "id": "part-0",
+      "kind": "internal",
+      "label": "Operation journal"
+    },
+    {
+      "id": "part-1",
+      "kind": "internal",
+      "label": "Coordination delivery"
+    }
+  ],
+  "notes": [
+    "This is an independent open-source package hosted by bkrabach, not a Microsoft component in the Constellation family index.",
+    "The public source import preserves its Unified provenance. Source ownership, publication and consumer artifact selection are separate reviewed steps; this listing does not change an existing selection.",
+    "Recovery retains unfinished operations as unknown without replay. Coordination helpers format and deliver caller-supplied evidence; they are not a scheduler or execution service."
+  ],
+  "page_kind": "supporting library",
+  "purpose": "Record operation evidence and deliver bounded coordination updates. An independent Python library.",
+  "ref": "03d792673952500e5d24537a4cad374b9f684495",
+  "repository": "bkrabach/amplifier-platform-operations",
+  "roles": [],
+  "start_cta": {
+    "label": "Read the library guide",
+    "url": "https://github.com/bkrabach/amplifier-platform-operations/blob/03d792673952500e5d24537a4cad374b9f684495/README.md#build-and-test-independently"
+  },
+  "summary": "An operation journal and coordination helpers retain identities, output and recovery evidence. The calling application owns admission, permissions, cancellation and execution.",
+  "supports_roles": [],
+  "visibility": "public"
+}
