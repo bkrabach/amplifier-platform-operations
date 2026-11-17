@@ -130,10 +130,15 @@ ambiguous release listings and uncertain replies are never overwritten or
 automatically retried. A tag lookup that hides a draft does not authorize creating
 a duplicate release.
 
-Publication controls can be checked separately with:
+Publication controls run separately from this flat runtime package. From the
+repository root, copy only their inputs to a temporary directory so pytest does
+not collect the runtime root as a test package:
 
 ```sh
-uv run --no-project --with pytest python -m pytest -q tests_release
+controls=$(mktemp -d)
+cp -R scripts tests_release "$controls/"
+(cd "$controls" && uv run --no-project --with pytest python -m pytest -q tests_release)
+rm -r "$controls"
 ```
 
 ## Contributing

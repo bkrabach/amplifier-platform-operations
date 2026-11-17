@@ -35,7 +35,12 @@ jobs:
         with:
           enable-cache: false
       - name: Check publication refusal and recovery
-        run: uv run --no-project --with pytest python -m pytest -q tests_release
+        run: |
+          controls="$RUNNER_TEMP/operations-release-tests"
+          mkdir "$controls"
+          cp -R scripts tests_release "$controls/"
+          cd "$controls"
+          uv run --no-project --with pytest python -m pytest -q tests_release
       - name: Select exact source
         id: plan
         env:
