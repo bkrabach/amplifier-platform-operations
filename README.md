@@ -75,18 +75,22 @@ reviewed authoring handoff, do not maintain competing authored copies.
 
 ## Existing artifacts and qualification
 
-Unified selects the original published 0.1.0 artifact from
-[its immutable operations-v0.1.0 release](https://github.com/microsoft/amplifier-unified/releases/tag/operations-v0.1.0).
-Its source receipt retains the original producer identity. This repository does
-not republish or overwrite those bytes. Unified continues to verify its generated
+Historical Unified releases selected the original 0.1.0 artifact from
+[the immutable Unified operations-v0.1.0 release](https://github.com/microsoft/amplifier-unified/releases/tag/operations-v0.1.0).
+Those receipts retain their original producer identity; this repository does not
+republish or overwrite those bytes. Unified's current selection is recorded in
+[`components/operations.source.json`](https://github.com/microsoft/amplifier-unified/blob/main/components/operations.source.json).
+A standalone publication does not change it. Unified verifies its generated
 selection offline for wheel, source-archive and editable builds; no sibling
 checkout or this repository is required by that packaged selection.
 
-The **Operations package** workflow builds one wheel and source archive,
-then runs the existing tests against that installed wheel outside this checkout
-on Linux/Python 3.13. It uploads qualification artifacts only. Native Windows,
-macOS and host integration acceptance remain separate; source publication is not
-proof of installed substitution or a live deployment.
+The **Operations package** workflow builds one wheel and source archive from an
+exact commit, verifies their package inputs and installed metadata, then runs the
+existing tests against that wheel outside this checkout on Linux and
+Windows/Python 3.13. The copied pytest configuration and `pytest-asyncio` keep the
+asynchronous notification check enabled. Pull requests and ordinary pushes qualify
+and retain artifacts; they do not publish. Host integration and macOS acceptance
+remain separate; package checks do not establish live adoption.
 
 The imported version remains 0.1.0. Before a new publication, coordinate
 its version and exact source/artifact receipt with consumers. Unified's later
@@ -94,6 +98,43 @@ selection is an explicit reviewed change with a sole installed owner and ordinar
 rollback. Newer records, uncertain effects and caller-owned state retain their
 authority; neither source handoff nor rollback permits replay. A later repository
 transfer should preserve history and releases.
+
+## Publish an exact standalone artifact
+
+After review and merge, manually run **Operations package** on `main` with the
+full merged `revision` and `publish: true`. Coordinate one publisher with consumers
+first. The workflow builds once and publishes those same verified bytes only
+after both installed checks pass. It does not change Unified's selection or an
+application's latest release.
+
+The four release assets are the wheel, source archive, `operations-source.json`,
+and `SHA256SUMS`. The schema-1 receipt explicitly names `component: operations`,
+this repository, `subdirectory: .`, the full commit/root tree, and hashes every
+packaged input. The three runtime files remain at the author root and are installed
+under `amplifier_operations/`; no source relocation or import alias is needed.
+The source archive includes the original tests and fixtures, metadata, license,
+and governance/provenance files. Automation and maps are bound by the full source
+identity and are not installed runtime code.
+
+`scripts/release.py` owns publication here, adapting the accepted Workspace
+Metadata producer's immutable asset and interrupted-draft checks. Historical
+Unified releases remain immutable. Consumer selection and rollback stay with
+their existing owners, preserving newer operation observations and cursors.
+
+For a failed or cancelled publication, inspect the recorded tag, exact release
+ID and original workflow artifacts before explicitly rerunning failed jobs.
+Reuse those original artifacts: rebuilding can change archive bytes. A separate
+invocation reconciles an existing draft and uploads only missing matching assets;
+an exact completed release is read-only. Changed source, tag identity or bytes,
+ambiguous release listings and uncertain replies are never overwritten or
+automatically retried. A tag lookup that hides a draft does not authorize creating
+a duplicate release.
+
+Publication controls can be checked separately with:
+
+```sh
+uv run --no-project --with pytest python -m pytest -q tests_release
+```
 
 ## Contributing
 
